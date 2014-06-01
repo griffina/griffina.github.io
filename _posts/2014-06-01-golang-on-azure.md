@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "Golang on Azure"
-description: "Running a Golang website on Microsoft Azure"
+description: "Creating a Golang website on Microsoft Azure"
 tags: [Go, Golang, Azure, Cloud]
 ---
 
-# Running a [Golang](http://golang.org/) website on [Azure](http://azure.microsoft.com/)
+# Creating a [Golang](http://golang.org/) website on [Azure](http://azure.microsoft.com/)
 
-You can run a [Go](http://golang.org/) website on [Microsoft Azure](http://azure.microsoft.com/) in the same way as [Jetty](http://www.eclipse.org/jetty/) or [Tomcat](http://tomcat.apache.org/) runs on Azure, with the Go website sitting behind IIS in a reverse proxy configuration.
+You can run a [Go](http://golang.org/) website on [Microsoft Azure](http://azure.microsoft.com/) in the same way as [Jetty](http://www.eclipse.org/jetty/) or [Tomcat](http://tomcat.apache.org/) runs on Azure, with the Go website sitting behind IIS in a reverse proxy configuration. This is an [Azure website](http://azure.microsoft.com/en-us/services/web-sites/) not a [VM running on Azure](http://azure.microsoft.com/en-us/services/virtual-machines/).
 
 To set this up:
 
@@ -23,7 +23,7 @@ import (
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hi there from Golang on azure")
+	fmt.Fprintf(w, "Hi there from Golang on Azure")
 }
 
 func main() {
@@ -40,7 +40,7 @@ func main() {
 * Create A new Azure Website with the quick create option:
 
 <figure>
-	<a href="/images/create_site.png"><img src="/images/create_site.png" alt="create azure site"></a>
+	<a href="/images/create_site.png"><img src="/images/create_site.png" alt="create Azure site"></a>
 	<figcaption>Quick create site on Azure</figcaption>
 </figure>
 
@@ -71,7 +71,7 @@ func main() {
 * FTP the ```my_app.exe``` to the ```bin\``` folder
 
 <figure>
-	<a href="/images/ftp2.png"><img src="/images/ftp2.png" alt="FTP the go exe to the azure website"></a>
+	<a href="/images/ftp2.png"><img src="/images/ftp2.png" alt="FTP the go exe to the Azure website"></a>
 	<figcaption>FTP the application to the bin folder</figcaption>
 </figure>
 
@@ -79,14 +79,14 @@ func main() {
 
 <figure>
 	<a href="/images/browse.png"><img src="/images/browse.png" alt="browse to the site"></a>
-	<figcaption>The result the Go app running on an azure website</figcaption>
+	<figcaption>The result the Go app running on an Azure website</figcaption>
 </figure>
 
 ## Updating the site
 As the ```.exe``` will be running, to upload a new version of ```my_app.exe``` you will need to stop the website from running before you do.
 <figure>
 	<a href="/images/stop.png"><img src="/images/stop.png" alt="stop the website"></a>
-	<figcaption>The result the Go app running on an azure website</figcaption>
+	<figcaption>The result the Go app running on an Azure website</figcaption>
 </figure>
 
 Upload the new .exe and restart the webiste.
@@ -119,7 +119,7 @@ import (
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hi there from Golang on azure")
+	fmt.Fprintf(w, "Hi there from Golang on Azure")
 }
 
 func main() {
@@ -133,7 +133,7 @@ func main() {
 The down side of this is that you need to define a environment variable on you system for testing.
 
 ## Performance
-I have not done any performance testing, but a couple of simple apps seem to respond quicker (approx 10%) and use less memory, and is much quicker to start than equivalent python [flask](http://flask.pocoo.org/) apps running on azure...your mileage may vary etc...but [Go is fast](http://www.techempower.com/benchmarks/)!
+I have not done any performance testing, but a couple of simple apps seem to respond quicker (approx 10%) and use less memory, and is much quicker to start than equivalent python [flask](http://flask.pocoo.org/) apps running on Azure...your mileage may vary etc...but [Go is fast](http://www.techempower.com/benchmarks/)!
 
 ## Enhancements
 * The above could be git deployable
