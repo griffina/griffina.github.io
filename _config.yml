@@ -1,37 +1,60 @@
-# Name of your blog (this will show up at the top of your page and in the RSS feed)
-name: Sample Jekyll Blog
+title:            griffina.github.io
+description:      description goes here if I ever think of one.
 
-# Short description (goes below the title; it will also be used in the RSS feed)
-description: This is a sample Jekyll Blog.
+#Your site's domain goes here. Leave localhost server or blank when working locally.
+#url:               #http://localhost:8787
 
-# Your name, as you want it to appear underneath each post and in the footer
-author: Your Name
+# Owner/author information
+owner:
+  name:           griffina
+  avatar:         avatar.jpg
+  bio:            "If I knew what to write I would put a bio here!"
+  email:          a@zxb45.co.uk
 
-# Your email if you want it to be linked on the contact page
-author_email: you@example.com
 
-# The directory for category index pages. Change it to something else if
-# for example you want links like /categories/category1 instead of /category1
-category_dir: /
+# Background image to be tiled on all pages
+background: 
 
-# Uncomment if you are planning to run the blog in a subdirectory
-# Note - if you enable this, and attempt to view your site locally you have to use the baseurl in your local path.
-# Example, you must use http://localhost:4000/path/to/blog
-#baseurl: /path/to/blog 
-baseurl: 
+# Analytics and webmaster tools stuff goes here
+google_analytics:   
+google_verify:      
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:         
 
-# The URL of your actual domain. This will be used to make absolute links in the RSS feed.
-url: http://griffina.github.io
+# Links to include in top navigation
+# For external links add external: true
+# links:
+#   - title: Theme Setup
+#     url: /theme-setup
+#   - title: External Link
+#     url: http://mademistakes.com
+#     external: true
 
-#### Under the Hood Stuff #####
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:    Europe/London
+future:      true
+highlighter: pygments
+markdown:    kramdown
 
-# Use rdiscount as the markdown engine because it generates html5 compliant code for stuff like footnotes
-# If you use maroku (default engine) some of your generated pages may not validate or lint as html5
-# If you don't have it install it via gem install rdiscount
-markdown: rdiscount
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+permalink:   /:categories/:title/
 
-# Makes pretty (descriptive) permalinks. See Jekyll docs for alternatives.
-#permalink: pretty
+# Amount of post to show on home page
+paginate: 5
 
-# Exclude metadata and development time dependencies (like Grunt plugins)
-#exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, node_modules]
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: true
+
+  coderay:
+    coderay_line_numbers: nil
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: class
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
